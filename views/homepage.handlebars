@@ -1,2 +1,17 @@
 <!-- body -->
-<h1>Print Something</h1>
+{{#each articles as |article| }}
+{{!-- <p>===========================================</p>
+<p>Article Title: {{article.title}}</p>
+<p>Article Content: {{article.content}}</p>
+<p>Article Date Created: {{format_date article.date_created}}</p>
+<p>Article User ID: {{article.user_id}}</p>
+<p>===========================================</p> --}}
+<div class="row">
+            <div class="bg-light p-3 m-1">
+                <h2 class="blog-post-title">{{article.title}}</h2>
+                <p class="blog-post-meta">{{format_date article.date_created}} by {{article.user_id}}</p>
+                <p>{{article.content}}</p>
+            </div>
+        </div>
+
+{{/each}}

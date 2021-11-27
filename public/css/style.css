@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.blog-post-title{
+    font-family: 'Playfair Display','Times New Roman', Times, serif;
+
+}
