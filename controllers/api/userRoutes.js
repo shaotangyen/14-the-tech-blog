@@ -49,7 +49,9 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
+  console.log("Log out post");
   if (req.session.logged_in) {
+    console.log("CURRENTLY LOGGED IN!!");
     req.session.destroy(() => {
       res.status(204).end();
     });

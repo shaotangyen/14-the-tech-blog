@@ -21,19 +21,14 @@
                 <a class="nav-link" href="/dashboard">DASHBOARD</a>
             </li>
             <li class="nav-item ms-auto">
-                <a class="nav-link" href="/logout">LOG OUT</a>
+                {{!-- <a class="nav-link" id="logout">LOG OUT</a> --}}
+            <button class="no-button" id="logout">logout</button>
             </li>
             {{else}}
             <li class="nav-item ms-auto">
                 <a class="nav-link" href="/login">LOG IN</a>
             </li>
             {{/if}}
-            {{!-- {{#if logged_in}}
-            <a href="/profile">profile</a> |
-            <button class="no-button" id="logout">logout</button>
-            {{else}}
-            <a href="/login">login</a>
-            {{/if}} --}}
         </div>
         <div class="row">
             <div class="bg-light p-3 m-1 text-center" id="title">
@@ -44,9 +39,9 @@
         {{{ body }}}
     </div>
 
-    {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-    {{/if}}
+    {{!-- {{#if logged_in}} --}}
+    <script src="/public/js/logout.js"></script>
+    {{!-- {{/if}} --}}
 </body>
 
 </html>
