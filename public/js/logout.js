@@ -1,3 +1,5 @@
+const { config } = require("dotenv");
+
 const logout = async () => {
   console.log("clicked logout");
   const response = await fetch('/api/users/logout', {
@@ -17,3 +19,4 @@ function test(event) {
 }
 
 document.querySelector('#logout').addEventListener('click', test);
+console.log("js loaded");
