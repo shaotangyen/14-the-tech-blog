@@ -1,4 +1,3 @@
-{{!-- TO DO --}}
 <div class="row d-flex justify-content-center mb-5">
   <form class="new-post bg-light p-3 m-1 col-6">
     <div class="mb-3">
@@ -20,6 +19,7 @@
     <h2 class="blog-post-title">{{article.title}}</h2>
     <p class="blog-post-meta">{{format_date article.date_created}}</p>
     <p>{{article.content}}</p>
+    <p><a href="/article/{{article.id}}">Read more...</a></p>
     {{!-- <button class="btn btn-primary" type="submit" id="edit-id">Edit</button> --}}
     <button class="btn btn-danger" type="submit" data-id="{{article.id}}">DELETE</button>
   </div>

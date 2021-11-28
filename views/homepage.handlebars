@@ -5,6 +5,7 @@
                 <h2 class="blog-post-title">{{article.title}}</h2>
                 <p class="blog-post-meta">{{format_date article.date_created}} by {{article.user.name}}</p>
                 <p>{{article.content}}</p>
+                <p><a href="/article/{{article.id}}">Read more...</a></p>
             </div>
         </div>
 {{/each}}

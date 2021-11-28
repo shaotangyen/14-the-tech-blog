@@ -1,0 +1,17 @@
+[
+  {
+    "comment": "I totally understand!",
+    "article_id": 1,
+    "user_id": 3
+  },
+  {
+    "comment": "I can't agree with you more",
+    "article_id": 1,
+    "user_id": 2
+  },
+  {
+    "comment": "I do not like it",
+    "article_id": 2,
+    "user_id": 3
+  }
+]

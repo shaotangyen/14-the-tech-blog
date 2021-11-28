@@ -1,14 +1,17 @@
 [
   {
     "title": "Christmas is coming!",
-    "content": "Can't wait for this year's holidays..."
+    "content": "Can't wait for this year's holidays...",
+    "user_id": 1
   },
   {
     "title": "Shang Chi",
-    "content": "My fav Marvel movie just came out today"
+    "content": "My fav Marvel movie just came out today",
+    "user_id": 2
   },
   {
     "title": "Covid",
-    "content": "Can't believe covid came along and ruined all travel plans"
+    "content": "Can't believe covid came along and ruined all travel plans",
+    "user_id": 3
   }
 ]

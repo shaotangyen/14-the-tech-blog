@@ -1,5 +1,3 @@
-// const { config } = require("dotenv");
-
 const logout = async () => {
   console.log("clicked logout");
   const response = await fetch('/api/users/logout', {

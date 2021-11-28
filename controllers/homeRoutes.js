@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Article, User } = require('../models');
+const { Article, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -29,7 +29,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-//TO DO
 router.get('/article/:id', async (req, res) => {
   try {
     const articleData = await Article.findByPk(req.params.id, {
@@ -38,10 +37,18 @@ router.get('/article/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+          include: [{
+            model: User,
+            attributes: ['name'],
+          }]
+        },
       ],
     });
 
     const article = articleData.get({ plain: true });
+    console.log(JSON.stringify({ article }, null, 2));
 
     res.render('article', {
       ...article,
@@ -61,13 +68,17 @@ router.get('/dashboard', withAuth, async (req, res) => {
       include: [{ model: Article }],
     });
 
+    console.log(JSON.stringify({ userData }, null, 2));
+
     const user = userData.get({ plain: true });
-    //console.log(JSON.stringify({ user }, null, 2));
+
     res.render('dashboard', {
       ...user,
       logged_in: true
     });
   } catch (err) {
+    console.log("=========================");
+    console.log(err);
     res.status(500).json(err);
   }
 });
