@@ -22,7 +22,7 @@
             </li>
             <li class="nav-item ms-auto">
                 {{!-- <a class="nav-link" id="logout">LOG OUT</a> --}}
-            <button class="no-button" id="logout">logout</button>
+                <button class="no-button nav-link" id="logout">LOG OUT</button>
             </li>
             {{else}}
             <li class="nav-item ms-auto">
@@ -35,13 +35,13 @@
                 <h1 class="text-primary fw-bold">The Tech Blog</h1>
             </div>
         </div>
-        <div class="m-5"></div> 
+        <div class="m-5"></div>
         {{{ body }}}
     </div>
 
-    {{!-- {{#if logged_in}} --}}
+    {{#if logged_in}}
     <script src="/js/logout.js"></script>
-    {{!-- {{/if}} --}}
+    {{/if}}
 </body>
 
 </html>

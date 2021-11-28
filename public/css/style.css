@@ -21,9 +21,9 @@ h6 {
 .no-button {
     background: none;
     border: none;
-    padding: 0;
+    padding: 0.5rem 1rem;
     cursor: pointer;
-    color: #1b89bc;
+    color: #0d6efd;
     text-decoration: none;
     font-size: 100%;
   }

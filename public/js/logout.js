@@ -1,4 +1,4 @@
-const { config } = require("dotenv");
+// const { config } = require("dotenv");
 
 const logout = async () => {
   console.log("clicked logout");
@@ -18,5 +18,4 @@ function test(event) {
   console.log("clicked logout");
 }
 
-document.querySelector('#logout').addEventListener('click', test);
-console.log("js loaded");
+document.querySelector('#logout').addEventListener('click', logout);
