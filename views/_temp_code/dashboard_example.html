@@ -15,23 +15,38 @@
         <div class="nav d-flex bd-highlight ">
             <li class="nav-item"> <a class="nav-link" href="/">HOME</a> </li>
             <li class="nav-item"> <a class="nav-link" href="/dashboard">DASHBOARD</a> </li>
-            <li class="nav-item ms-auto"> <a class="nav-link" href="/login">LOG IN</a> </li>
-            <button class="no-button" id="logout">logout</button>
+            <li class="nav-item ms-auto"> <a class="nav-link" href="/logout">LOG OUT</a> </li>
+            <!-- <button class="no-button" id="logout">LOGOUT</button> -->
         </div>
         <div class="row">
-            <div class="bg-light p-3 m-1 text-center" id="title">
+            <div class="bg-light p-3 m-1 text-center mb-5" id="title">
                 <h1 class="text-primary fw-bold">The Tech Blog</h1>
             </div>
         </div>
-        <div class="m-5"></div>
 
-        
+        <div class="row d-flex justify-content-center mb-5">
+            <form class="new-post bg-light p-3 m-1 col-6">
+                <div class="mb-3">
+                    <h3 label class="form-label blog-post-title" for="new-post">Title</h3>
+                    <input class="form-control" type="text" id="new-post-title">
+                </div>
+                <div class="mb-3">
+                    <h4 label class="form-label blog-post-title" for="new-post">Blog Content</h4>
+                    <textarea class="form-control" type="text" rows="6" id="new-post-content"></textarea>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">Post</button>
+                </div>
+            </form>
+        </div>
 
         <div class="row">
             <div class="bg-light p-3 m-1">
                 <h2 class="blog-post-title">Sample blog post title</h2>
                 <p class="blog-post-meta">Date by XXX</p>
                 <p>XXXYYYZZZ.</p>
+                <button class="btn btn-primary" type="submit" id="edit-id">Edit</button>
+                <button class="btn btn-primary" type="submit" id="delete-id">Delete</button>
             </div>
         </div>
         <div class="row">
@@ -39,6 +54,8 @@
                 <h2 class="blog-post-title">Sample blog post title</h2>
                 <p class="blog-post-meta">Date by XXX</p>
                 <p>XXXYYYZZZ.</p>
+                <button class="btn btn-primary" type="submit" id="edit-id">Edit</button>
+                <button class="btn btn-primary" type="submit" id="delete-id">Delete</button>
             </div>
         </div>
     </div>

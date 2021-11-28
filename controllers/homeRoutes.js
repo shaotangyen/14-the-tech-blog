@@ -37,6 +37,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//TO DO
 router.get('/article/:id', async (req, res) => {
   try {
     const articleData = await Article.findByPk(req.params.id, {
@@ -69,7 +70,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(JSON.stringify({ user }, null, 2));
     res.render('dashboard', {
       ...user,
       logged_in: true
