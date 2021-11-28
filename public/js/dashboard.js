@@ -5,7 +5,7 @@ const newPostHandler = async (event) => {
   const content = document.querySelector('#new-post-content').value.trim();
 
   if (title && content) {
-    const response = await fetch(`/api/articles`, {
+    const response = await fetch(`/api/article`, {
       method: 'POST',
       body: JSON.stringify({ title, content }),
       headers: {
@@ -30,7 +30,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/article');
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to delete article');
     }
@@ -41,6 +41,6 @@ document
   .querySelector('.new-post')
   .addEventListener('submit', newPostHandler);
 
-// document
-//   .querySelector('.article-list')
-//   .addEventListener('click', delButtonHandler);
+document
+  .querySelector('.article-list')
+  .addEventListener('click', delButtonHandler);

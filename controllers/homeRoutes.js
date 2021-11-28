@@ -8,28 +8,20 @@ router.get('/', async (req, res) => {
     // Get all articles and JOIN with user data
     const articleData = await Article.findAll(
       {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
       }
     );
-    // console.log("========='JSON.stringify({ articleData }, null, 2):'=========");
-    // console.log(JSON.stringify({ articleData }, null, 2));
-    // console.log("========='articleData:'=========");
-    // console.log(articleData);
-
-    // Serialize data so the template can read it
+    //console.log(JSON.stringify({ articleData }, null, 2));
     const articles = articleData.map((article) => article.get({ plain: true }));
-    // console.log("========='articles:'=========");
-    // console.log(articles);
-
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
+    res.render('homepage', {
       articles,
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     console.log(err)
@@ -70,7 +62,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-    console.log(JSON.stringify({ user }, null, 2));
+    //console.log(JSON.stringify({ user }, null, 2));
     res.render('dashboard', {
       ...user,
       logged_in: true

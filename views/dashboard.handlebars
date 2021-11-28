@@ -1,6 +1,5 @@
 {{!-- TO DO --}}
 <div class="row d-flex justify-content-center mb-5">
-  <h2>Welcome, {{name}}!</h2>
   <form class="new-post bg-light p-3 m-1 col-6">
     <div class="mb-3">
       <h3 label class="form-label blog-post-title" for="new-post">Title</h3>
@@ -15,29 +14,15 @@
     </div>
   </form>
 </div>
-
-<div class="row">
-  <div class="bg-light p-3 m-1">
-    <h2 class="blog-post-title">Sample blog post title</h2>
-    <p class="blog-post-meta">Date by XXX</p>
-    <p>XXXYYYZZZ.</p>
-    <button class="btn btn-primary" type="submit" id="edit-id">Edit</button>
-    <button class="btn btn-primary" type="submit" id="delete-id">Delete</button>
-  </div>
-</div>
-
-{{#each articles as |article| }}
-<div class="row">
+<div class="row article-list">
+  {{#each articles as |article| }}
   <div class="bg-light p-3 m-1">
     <h2 class="blog-post-title">{{article.title}}</h2>
-    <p class="blog-post-meta">{{format_date article.date_created}} by {{article.user.name}}</p>
+    <p class="blog-post-meta">{{format_date article.date_created}}</p>
     <p>{{article.content}}</p>
-    {{!-- 
-    <button class="btn btn-primary" type="submit" id="edit-id">Edit</button>
-    <button class="btn btn-primary" type="submit" id="delete-id">Delete</button> 
-    --}}
+    {{!-- <button class="btn btn-primary" type="submit" id="edit-id">Edit</button> --}}
+    <button class="btn btn-danger" type="submit" data-id="{{article.id}}">DELETE</button>
   </div>
+  {{/each}}
 </div>
-{{/each}}
-
 <script src="./js/dashboard.js"></script>
