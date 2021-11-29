@@ -15,7 +15,11 @@ h6 {
 
 .blog-post-title{
     font-family: 'Playfair Display','Times New Roman', Times, serif;
+}
 
+.blog-post-meta{
+    font-size: 0.9rem;
+    color:rgb(97, 97, 97);
 }
 
 .no-button {
@@ -32,3 +36,7 @@ h6 {
     color: #065b83;
     text-decoration: underline;
   }
+
+  .bg-comment {
+    background-color:rgb(243, 244, 255);
+}

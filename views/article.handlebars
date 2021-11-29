@@ -1,19 +1,48 @@
 <div class="row">
-{{!-- article --}}
-  <div class="bg-light p-3 m-1">
-    
+  <div class="bg-light p-3 m-1 text-center mb-5" id="title">
+    <h1 class="text-primary fw-bold">The Tech Blog</h1>
+  </div>
+</div>
+
+{{!-- Display an article --}}
+<div class="row article-list">
+  <div class="bg-light p-3 m-1 mb-5">
+
     <h2 class="blog-post-title">{{title}}</h2>
     <p class="blog-post-meta">{{format_date date_created}} by {{user.name}}</p>
     <p>{{content}}</p>
   </div>
+</div>
 
-{{!-- comment --}}
-<div class="bg-light p-3 m-1">
-    
+
+{{!-- New comment form --}}
+{{#if logged_in}}
+<div class="row d-flex justify-content-center">
+  <form class="new-comment bg-comment p-3 m-1 col-6">
+    <div class="mb-3">
+      <h3 label class="form-label blog-post-title text-secondary" for="new-comment">Leave a comment</h3>
+      <textarea class="form-control" type="text" rows="1" id="new-comment"></textarea>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary" id="articleId" value="{{id}}" type="submit">Post</button>
+    </div>
+  </form>
+</div>
+{{else}}
+<div class="row flex-d justify-content-center mb-3">
+  <h4 class="bg-comment col-6 text-secondary text-center p-3"> <a href="/login">log in</a> to leave a comment </h4>
+</div>
+{{/if}}
+
+{{!-- Display list of comments --}}
+<div class="row flex-d justify-content-center">
+  <div class="bg-comment p-3 m-1 col-6">
+    <h4 class="text-secondary text-center">Comments</h4>
     {{#each comments as |comment| }}
-    <p class="blog-post-meta">COMMENT HERE: {{comment.comment}}.</p>
     <p class="blog-post-meta">{{format_date comment.date_created}} by {{comment.user.name}}</p>
+    <p>{{comment.comment}}.</p>
+    <br>
     {{/each}}
   </div>
-
 </div>
+<script src="/js/comment.js"></script>

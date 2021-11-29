@@ -48,9 +48,29 @@ router.get('/article/:id', async (req, res) => {
     });
 
     const article = articleData.get({ plain: true });
-    console.log(JSON.stringify({ article }, null, 2));
+    //console.log(JSON.stringify({ article }, null, 2));
 
     res.render('article', {
+      ...article,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/article/:id/edit', async (req, res) => {
+  try {
+    const articleData = await Article.findByPk(req.params.id, {
+      include: [
+        {
+          model: User
+        },
+      ],
+    });
+    const article = articleData.get({ plain: true });
+    //console.log(JSON.stringify({ article }, null, 2));
+    res.render('editArticle', {
       ...article,
       logged_in: req.session.logged_in
     });
@@ -68,8 +88,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       include: [{ model: Article }],
     });
 
-    console.log(JSON.stringify({ userData }, null, 2));
-
+    //console.log(JSON.stringify({ userData }, null, 2));
     const user = userData.get({ plain: true });
 
     res.render('dashboard', {

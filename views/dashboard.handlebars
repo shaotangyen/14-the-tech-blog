@@ -1,18 +1,33 @@
-<div class="row d-flex justify-content-center mb-5">
-  <form class="new-post bg-light p-3 m-1 col-6">
-    <div class="mb-3">
-      <h3 label class="form-label blog-post-title" for="new-post">Title</h3>
-      <input class="form-control" type="text" id="new-post-title">
-    </div>
-    <div class="mb-3">
-      <h4 label class="form-label blog-post-title" for="new-post">Blog Content</h4>
-      <textarea class="form-control" type="text" rows="6" id="new-post-content"></textarea>
-    </div>
-    <div class="text-center">
-      <button class="btn btn-primary" type="submit">Post</button>
-    </div>
-  </form>
+<div class="row">
+  <div class="bg-light p-3 m-1 text-center mb-5" id="title">
+    <h1 class="text-primary fw-bold">Dashboard</h1>
+  </div>
 </div>
+
+<div class="new-post-button row mb-5">
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-primary btn-lg">+ New Post</button>
+  </div>
+</div>
+{{!-- New Post Form --}}
+<div class="new-post-form row mb-5">
+  <div class="d-flex justify-content-center">
+    <form class="new-post bg-light p-3 m-1 col-6">
+      <div class="mb-3">
+        <h3 label class="form-label blog-post-title" for="new-post">Title</h3>
+        <input class="form-control" type="text" id="new-post-title">
+      </div>
+      <div class="mb-3">
+        <h4 label class="form-label blog-post-title" for="new-post">Blog Content</h4>
+        <textarea class="form-control" type="text" rows="6" id="new-post-content"></textarea>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary" type="submit">Post</button>
+      </div>
+    </form>
+  </div>
+</div>
+{{!-- Display articles of the user --}}
 <div class="row article-list">
   {{#each articles as |article| }}
   <div class="bg-light p-3 m-1">
@@ -20,9 +35,9 @@
     <p class="blog-post-meta">{{format_date article.date_created}}</p>
     <p>{{article.content}}</p>
     <p><a href="/article/{{article.id}}">Read more...</a></p>
-    {{!-- <button class="btn btn-primary" type="submit" id="edit-id">Edit</button> --}}
-    <button class="btn btn-danger" type="submit" data-id="{{article.id}}">DELETE</button>
+    <button class="btn btn-primary" type="submit" data-id="{{article.id}}" value="edit">Edit</button>
+    <button class="btn btn-danger" type="submit" data-id="{{article.id}}" value="delete">DELETE</button>
   </div>
   {{/each}}
 </div>
-<script src="./js/dashboard.js"></script>
+<script src="/js/dashboard.js"></script>
