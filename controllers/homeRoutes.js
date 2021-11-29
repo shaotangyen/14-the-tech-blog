@@ -3,7 +3,6 @@ const { Article, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  //console.log("I am in");
   try {
     // Get all articles and JOIN with user data
     const articleData = await Article.findAll(

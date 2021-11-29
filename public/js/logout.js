@@ -1,19 +1,16 @@
 const logout = async () => {
-  console.log("clicked logout");
+  //Send a POST request to the API endpoint
   const response = await fetch('/api/users/logout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
   });
 
+  // If successful, redirect the browser to the home page
   if (response.ok) {
     document.location.replace('/');
   } else {
     alert(response.statusText);
   }
 };
-
-function test(event) {
-  console.log("clicked logout");
-}
 
 document.querySelector('#logout').addEventListener('click', logout);

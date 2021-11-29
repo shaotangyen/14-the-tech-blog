@@ -5,7 +5,8 @@ const newPostHandler = async (event) => {
     const editedContent = document.querySelector('#edit-post-content').value.trim();
     const id = document.querySelector('#id').getAttribute("data-id");
 
-    if (event.target.value =="update") {
+    if (event.target.value == "update") {
+        // if update button is clicked, use PUT to update the article
         const response = await fetch(`/api/article/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ id, editedTitle, editedContent }),
@@ -13,17 +14,20 @@ const newPostHandler = async (event) => {
                 'Content-Type': 'application/json',
             },
         });
+
+        //if success, redirect to dashboard
         if (response.ok) {
             document.location.replace(`/dashboard`);
         } else {
-            console.log(response);
             alert('Failed to update article');
         }
-    } else if (event.target.value =="cancel"){
+    } else if (event.target.value == "cancel") {
+        // if cancel button is clicked, redirect to dashboard
         document.location.replace(`/dashboard`);
     }
 
 };
+
 
 document
     .querySelector('.edit-post')

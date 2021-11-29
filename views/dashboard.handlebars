@@ -1,14 +1,17 @@
+{{!-- Header --}}
 <div class="row">
   <div class="bg-light p-3 m-1 text-center mb-5" id="title">
     <h1 class="text-primary fw-bold">Dashboard</h1>
   </div>
 </div>
 
+{{!-- New Post Button --}}
 <div class="new-post-button row mb-5">
   <div class="d-flex justify-content-center">
     <button type="button" class="btn btn-primary btn-lg">+ New Post</button>
   </div>
 </div>
+
 {{!-- New Post Form --}}
 <div class="new-post-form row mb-5">
   <div class="d-flex justify-content-center">
@@ -27,6 +30,7 @@
     </form>
   </div>
 </div>
+
 {{!-- Display articles of the user --}}
 <div class="row article-list">
   {{#each articles as |article| }}

@@ -5,6 +5,7 @@ const newCommentHandler = async (event) => {
   const articleId = document.querySelector("#articleId").value;
 
   if (newComment) {
+    //if new comment is created, do a POST to create a comment
     const response = await fetch(`/api/comment`, {
       method: 'POST',
       body: JSON.stringify({ newComment, articleId }),
@@ -13,6 +14,7 @@ const newCommentHandler = async (event) => {
       },
     });
 
+    //if succeed, reload the page
     if (response.ok) {
       location.reload();
     } else {
@@ -21,26 +23,6 @@ const newCommentHandler = async (event) => {
   }
 };
 
-// const delButtonHandler = async (event) => {
-//   if (event.target.hasAttribute('data-id')) {
-//     const id = event.target.getAttribute('data-id');
-
-//     const response = await fetch(`/api/article/${id}`, {
-//       method: 'DELETE',
-//     });
-
-//     if (response.ok) {
-//       document.location.replace('/dashboard');
-//     } else {
-//       alert('Failed to delete article');
-//     }
-//   }
-// };
-
 document
   .querySelector('.new-comment')
   .addEventListener('submit', newCommentHandler);
-
-// document
-//   .querySelector('.article-list')
-//   .addEventListener('click', delButtonHandler);
