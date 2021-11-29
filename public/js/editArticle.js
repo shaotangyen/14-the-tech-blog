@@ -6,7 +6,7 @@ const newPostHandler = async (event) => {
     const id = document.querySelector('#id').getAttribute("data-id");
 
     if (event.target.value == "update") {
-        // if update button is clicked, use PUT to update the article
+        // if update button is clicked, use PUT to update the article 
         const response = await fetch(`/api/article/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ id, editedTitle, editedContent }),

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Article } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//create a new article
+//create a new article 
 router.post('/', withAuth, async (req, res) => {
   try {
     const newArticle = await Article.create({
@@ -16,7 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-//edit an article
+//edit an article 
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const editArticle = await Article.update(
@@ -37,7 +37,7 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
-//delete an article
+//delete an article 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const projectData = await Article.destroy({

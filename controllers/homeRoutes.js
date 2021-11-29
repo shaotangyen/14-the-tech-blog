@@ -47,7 +47,7 @@ router.get('/article/:id', async (req, res) => {
     });
 
     const article = articleData.get({ plain: true });
-    //console.log(JSON.stringify({ article }, null, 2));
+    //console.log(JSON.stringify({ article }, null, 2)); 
 
     res.render('article', {
       ...article,

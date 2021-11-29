@@ -5,7 +5,7 @@ const newPostHandler = async (event) => {
   const content = document.querySelector('#new-post-content').value.trim();
 
   if (title && content) {
-    //if there's something in the title/content, do a POST to create a new article
+    //if there's something in the title/content, do a POST to create a new article 
     const response = await fetch(`/api/article`, {
       method: 'POST',
       body: JSON.stringify({ title, content }),

@@ -1,7 +1,7 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    // Collect values from the signup form
+    // Collect values from the signup form 
     const name = document.querySelector('#name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();

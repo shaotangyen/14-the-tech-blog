@@ -5,7 +5,7 @@ const newCommentHandler = async (event) => {
   const articleId = document.querySelector("#articleId").value;
 
   if (newComment) {
-    //if new comment is created, do a POST to create a comment
+    //if new comment is created, do a POST to create a comment 
     const response = await fetch(`/api/comment`, {
       method: 'POST',
       body: JSON.stringify({ newComment, articleId }),
